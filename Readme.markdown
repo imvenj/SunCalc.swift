@@ -1,6 +1,6 @@
 # SunCalc.swift
 
-A direct port of [sulcalc](https://github.com/mourner/suncalc) javascript library ([commit b08d1f6f8](https://github.com/mourner/suncalc/commit/b08d1f6f8e56a3c0d85469d6cf0ff8675cba40a5)). Which means this port inherits the same accuracy and issues with the original javascript library. 
+A direct port of [suncalc](https://github.com/mourner/suncalc) javascript library ([commit b08d1f6f8](https://github.com/mourner/suncalc/commit/b08d1f6f8e56a3c0d85469d6cf0ff8675cba40a5)). Which means this port inherits the same accuracy and issues with the original javascript library. 
 
 ## Examples
 
