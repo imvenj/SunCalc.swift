@@ -3,7 +3,7 @@ import Foundation
 // Type aliases
 public typealias AzimuthCoordinate = (azimuth: Double, altitude: Double)
 public typealias EclipticCoordinate = (rightAscension: Double, declination: Double)
-public typealias MoonAzimuth = (azimuth: Double, altitude: Double, distance: Double, parallacticAngle: Double)
+public typealias MoonPosition = (azimuth: Double, altitude: Double, distance: Double, parallacticAngle: Double)
 public typealias MoonCoordinate = (rightAscension: Double, declination: Double, distance: Double)
 public typealias MoonIllumination = (fraction: Double, phase: Double, angle: Double)
 
@@ -141,7 +141,7 @@ public class SunCalc {
         return (azimuth(h: h, phi: phi, dec: c.declination), altitude(h: h, phi: phi, dec: c.declination))
     }
 
-    public func moonPosition(date: Date, location: Location) -> MoonAzimuth {
+    public func moonPosition(date: Date, location: Location) -> MoonPosition {
         let lw = Double.radPerDegree * location.longitude * -1.0
         let phi = Double.radPerDegree * location.latitude
         let d = date.daysSince2000
@@ -195,8 +195,8 @@ public class SunCalc {
         }
     }
 
-    public func moonTimes(date: Date, location: Location, timezone: TimeZone) throws -> (moonRiseTime: Date, moonSetTime: Date) {
-        let date = date.beginning(in: timezone)
+    public func moonTimes(date: Date, location: Location) throws -> (moonRiseTime: Date, moonSetTime: Date) {
+        let date = date.beginning()
         let hc = 0.133 * Double.radPerDegree
         var h0 = moonPosition(date: date, location: location).altitude - hc
 

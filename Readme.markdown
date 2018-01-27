@@ -9,6 +9,7 @@ A direct port of [sulcalc](https://github.com/mourner/suncalc) javascript librar
 let formatter = DateFormatter()
 formatter.dateStyle = .short
 formatter.timeStyle = .short
+formatter.timeZone = .current
 
 // Sunrise and sunset
 let sunCalc = SunCalc()
@@ -23,10 +24,10 @@ print("Sunrise: \(sunrise)")
 print("Sunset: \(sunset)")
 
 // Moon rise and moon set
-let moonTimes = try? sunCalc.moonTimes(date: now, location: location, timezone: TimeZone.current)
+let moonTimes = try? sunCalc.moonTimes(date: now, location: location)
 if let moonTimes = moonTimes {
-    print("Moonset: \(formatter.string(from: moonTimes.moonSetTime))")
     print("Moonrise: \(formatter.string(from: moonTimes.moonRiseTime))")
+    print("Moonset: \(formatter.string(from: moonTimes.moonSetTime))")
 }
 ```
 

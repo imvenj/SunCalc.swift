@@ -27,10 +27,10 @@ extension Date {
         return addingTimeInterval(h * 3600.0)
     }
 
-    // Beginning time of a day, aka. 0:00 or midnight.
-    func beginning(in timezone: TimeZone) -> Date {
+    // Beginning time of a day, aka. 0:00 or midnight in GMT.
+    func beginning() -> Date {
         let calender = Calendar.init(identifier: .gregorian)
-        var comp = calender.dateComponents(in: timezone, from: self)
+        var comp = calender.dateComponents(in: TimeZone(identifier: "GMT")!, from: self)
         comp.hour = 0
         comp.minute = 0
         comp.second = 0

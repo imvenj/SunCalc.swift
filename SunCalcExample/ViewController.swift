@@ -22,6 +22,7 @@ class ViewController: NSViewController {
         let formatter = DateFormatter()
         formatter.dateStyle = .short
         formatter.timeStyle = .short
+        formatter.timeZone = .current
         let sunset = formatter.string(from: set)
         let astronomicalDusk = formatter.string(from: aDusk)
         print("Sunset: \(sunset)")
@@ -32,10 +33,10 @@ class ViewController: NSViewController {
         print("Current moon phase \(phase)")
 
 
-        let moonTimes = try? sunCalc.moonTimes(date: now, location: location, timezone: TimeZone.current)
+        let moonTimes = try? sunCalc.moonTimes(date: now, location: location)
         if let moonTimes = moonTimes {
-            print("Moonset: \(formatter.string(from: moonTimes.moonSetTime))")
             print("Moonrise: \(formatter.string(from: moonTimes.moonRiseTime))")
+            print("Moonset: \(formatter.string(from: moonTimes.moonSetTime))")
         }
     }
 
