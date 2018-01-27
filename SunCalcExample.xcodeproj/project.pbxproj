@@ -1,0 +1,334 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		257C4BDE201C197B00E66951 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 257C4BDD201C197B00E66951 /* AppDelegate.swift */; };
+		257C4BE0201C197B00E66951 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 257C4BDF201C197B00E66951 /* ViewController.swift */; };
+		257C4BE2201C197B00E66951 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 257C4BE1201C197B00E66951 /* Assets.xcassets */; };
+		257C4BE5201C197B00E66951 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 257C4BE3201C197B00E66951 /* Main.storyboard */; };
+		257C4BF0201C199600E66951 /* SunCalc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 257C4BEE201C199600E66951 /* SunCalc.swift */; };
+		257C4BF1201C199600E66951 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 257C4BEF201C199600E66951 /* Extensions.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		257C4BDA201C197B00E66951 /* SunCalcExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SunCalcExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		257C4BDD201C197B00E66951 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		257C4BDF201C197B00E66951 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		257C4BE1201C197B00E66951 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		257C4BE4201C197B00E66951 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		257C4BE6201C197B00E66951 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		257C4BE7201C197B00E66951 /* SunCalcExample.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SunCalcExample.entitlements; sourceTree = "<group>"; };
+		257C4BEE201C199600E66951 /* SunCalc.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SunCalc.swift; sourceTree = "<group>"; };
+		257C4BEF201C199600E66951 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		257C4BD7201C197B00E66951 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		257C4BD1201C197B00E66951 = {
+			isa = PBXGroup;
+			children = (
+				257C4BDC201C197B00E66951 /* SunCalcExample */,
+				257C4BDB201C197B00E66951 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		257C4BDB201C197B00E66951 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				257C4BDA201C197B00E66951 /* SunCalcExample.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		257C4BDC201C197B00E66951 /* SunCalcExample */ = {
+			isa = PBXGroup;
+			children = (
+				257C4BF2201C199D00E66951 /* SunCalc */,
+				257C4BDD201C197B00E66951 /* AppDelegate.swift */,
+				257C4BDF201C197B00E66951 /* ViewController.swift */,
+				257C4BE1201C197B00E66951 /* Assets.xcassets */,
+				257C4BE3201C197B00E66951 /* Main.storyboard */,
+				257C4BE6201C197B00E66951 /* Info.plist */,
+				257C4BE7201C197B00E66951 /* SunCalcExample.entitlements */,
+			);
+			path = SunCalcExample;
+			sourceTree = "<group>";
+		};
+		257C4BF2201C199D00E66951 /* SunCalc */ = {
+			isa = PBXGroup;
+			children = (
+				257C4BEF201C199600E66951 /* Extensions.swift */,
+				257C4BEE201C199600E66951 /* SunCalc.swift */,
+			);
+			path = SunCalc;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		257C4BD9201C197B00E66951 /* SunCalcExample */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 257C4BEA201C197B00E66951 /* Build configuration list for PBXNativeTarget "SunCalcExample" */;
+			buildPhases = (
+				257C4BD6201C197B00E66951 /* Sources */,
+				257C4BD7201C197B00E66951 /* Frameworks */,
+				257C4BD8201C197B00E66951 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SunCalcExample;
+			productName = SunCalcExample;
+			productReference = 257C4BDA201C197B00E66951 /* SunCalcExample.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		257C4BD2201C197B00E66951 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0920;
+				LastUpgradeCheck = 0920;
+				ORGANIZATIONNAME = venj;
+				TargetAttributes = {
+					257C4BD9201C197B00E66951 = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 257C4BD5201C197B00E66951 /* Build configuration list for PBXProject "SunCalcExample" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 257C4BD1201C197B00E66951;
+			productRefGroup = 257C4BDB201C197B00E66951 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				257C4BD9201C197B00E66951 /* SunCalcExample */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		257C4BD8201C197B00E66951 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				257C4BE2201C197B00E66951 /* Assets.xcassets in Resources */,
+				257C4BE5201C197B00E66951 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		257C4BD6201C197B00E66951 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				257C4BF0201C199600E66951 /* SunCalc.swift in Sources */,
+				257C4BE0201C197B00E66951 /* ViewController.swift in Sources */,
+				257C4BDE201C197B00E66951 /* AppDelegate.swift in Sources */,
+				257C4BF1201C199600E66951 /* Extensions.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		257C4BE3201C197B00E66951 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				257C4BE4201C197B00E66951 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		257C4BE8201C197B00E66951 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		257C4BE9201C197B00E66951 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+			};
+			name = Release;
+		};
+		257C4BEB201C197B00E66951 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = SunCalcExample/SunCalcExample.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 32Y52676KN;
+				INFOPLIST_FILE = SunCalcExample/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = me.venj.SunCalcExample;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+			};
+			name = Debug;
+		};
+		257C4BEC201C197B00E66951 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = SunCalcExample/SunCalcExample.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 32Y52676KN;
+				INFOPLIST_FILE = SunCalcExample/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = me.venj.SunCalcExample;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		257C4BD5201C197B00E66951 /* Build configuration list for PBXProject "SunCalcExample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				257C4BE8201C197B00E66951 /* Debug */,
+				257C4BE9201C197B00E66951 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		257C4BEA201C197B00E66951 /* Build configuration list for PBXNativeTarget "SunCalcExample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				257C4BEB201C197B00E66951 /* Debug */,
+				257C4BEC201C197B00E66951 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 257C4BD2201C197B00E66951 /* Project object */;
+}
