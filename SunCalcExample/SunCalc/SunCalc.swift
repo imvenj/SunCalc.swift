@@ -7,21 +7,6 @@ public typealias MoonPosition = (azimuth: Double, altitude: Double, distance: Do
 public typealias MoonCoordinate = (rightAscension: Double, declination: Double, distance: Double)
 public typealias MoonIllumination = (fraction: Double, phase: Double, angle: Double)
 
-// Errors
-//TODO: Sun errors are not handled currently.
-public enum SunCalcError: Error {
-    case sunNeverRise
-    case sunNeverSet
-    case moonNeverRise
-    case moonNeverSet
-}
-
-// Location Structure
-public struct Location {
-    var latitude: Double
-    var longitude: Double
-}
-
 // Solar Events
 public enum SolarEvent {
     case sunrise
@@ -55,6 +40,24 @@ public enum SolarEvent {
 
 // Main implementation
 public class SunCalc {
+
+    // Location Structure
+    public struct Location {
+        var latitude: Double
+        var longitude: Double
+    }
+
+    // Errors
+    public enum SolarEventError: Error {
+        case sunNeverRise
+        case sunNeverSet
+    }
+
+    public enum LunarEventError: Error {
+        case moonNeverRise
+        case moonNeverSet
+    }
+
     private static let e = 23.4397 * Double.radPerDegree
 
     private func rightAscension(l: Double, b: Double) -> Double {
@@ -111,12 +114,20 @@ public class SunCalc {
         return Date.j2000 + ds + 0.0053 * sin(m) - 0.0069 * sin(2.0 * l)
     }
 
-    private func hourAngle(h: Double, phi: Double, d: Double) -> Double {
-        return acos((sin(h) - sin(phi) * sin(d)) / (cos(phi) * cos(d)))
+    private func hourAngle(h: Double, phi: Double, d: Double) throws -> Double {
+        let cosH = (sin(h) - sin(phi) * sin(d)) / (cos(phi) * cos(d))
+        if cosH > 1 {
+            throw SolarEventError.sunNeverRise
+        }
+        if cosH < -1 {
+            throw SolarEventError.sunNeverSet
+        }
+        //print(cosH)
+        return acos(cosH)
     }
 
-    private func getSetJ(h: Double, lw: Double, phi: Double, dec: Double, n: Double, m: Double, l:Double) -> Double {
-        let w = hourAngle(h: h, phi: phi, d: dec)
+    private func getSetJ(h: Double, lw: Double, phi: Double, dec: Double, n: Double, m: Double, l:Double) throws -> Double {
+        let w = try hourAngle(h: h, phi: phi, d: dec)
         let a = approximateTransit(hT: w, lw: lw, n: n)
         return solarTransitJ(ds: a, m: m, l: l)
     }
@@ -165,7 +176,7 @@ public class SunCalc {
         return ((1.0 + cos(inc)) / 2.0, 0.5 + 0.5 * inc * (angle < 0.0 ? -1.0 : 1.0) / Double.pi, angle)
     }
 
-    public func time(ofDate date: Date, forSolarEvent event: SolarEvent, atLocation location: Location) -> Date {
+    public func time(ofDate date: Date, forSolarEvent event: SolarEvent, atLocation location: Location) throws -> Date {
         let lw = Double.radPerDegree * location.longitude * -1.0
         let phi = Double.radPerDegree * location.latitude
         let d = date.daysSince2000
@@ -178,7 +189,7 @@ public class SunCalc {
         let noon = Date(julianDays: jNoon)
 
         let angle = event.solarAngle
-        let jSet = getSetJ(h: angle * Double.radPerDegree, lw: lw, phi: phi, dec: dec, n: n, m: m, l: l)
+        let jSet = try getSetJ(h: angle * Double.radPerDegree, lw: lw, phi: phi, dec: dec, n: n, m: m, l: l)
 
         switch event {
         case .noon: return noon
@@ -249,11 +260,12 @@ public class SunCalc {
         }
         else {
             if ye > 0 {
-                throw SunCalcError.moonNeverSet
+                throw LunarEventError.moonNeverSet
             }
             else {
-                throw SunCalcError.moonNeverRise
+                throw LunarEventError.moonNeverRise
             }
         }
     }
 }
+

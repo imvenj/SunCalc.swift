@@ -2,6 +2,20 @@
 
 A direct port of [suncalc](https://github.com/mourner/suncalc) javascript library ([commit b08d1f6f8](https://github.com/mourner/suncalc/commit/b08d1f6f8e56a3c0d85469d6cf0ff8675cba40a5)). Which means this port inherits the same accuracy and issues with the original javascript library. 
 
+## Updated
+
+Now `SunCalc` can handle polar region's "Mid-night sun". Errors are now embeded in `SunCalc` class:
+
+```swift
+SunCalc.SolarEventError.sunNeverRise
+SunCalc.SolarEventError.sunNeverSet
+
+SunCalc.LunarEventError.moonNeverRise
+SunCalc.LunarEventError.moonNeverSet
+```
+
+`Location` now become `SunCalc.Location`.
+
 ## Examples
 
 ```swift
@@ -14,14 +28,15 @@ formatter.timeZone = .current
 // Sunrise and sunset
 let sunCalc = SunCalc()
 let now = Date()
-let location = Location(latitude: 25.0, longitude: 120.0)
-let riseTime = sunCalc.time(ofDate: now, forSolarEvent: .sunrise, atLocation: location)
-let setTime = sunCalc.time(ofDate: now, forSolarEvent: .sunset, atLocation: location)
-let sunrise = formatter.string(from: riseTime)
-let sunset = formatter.string(from: setTime)
-
-print("Sunrise: \(sunrise)")
-print("Sunset: \(sunset)")
+let location = SunCalc.Location(latitude: 25.0, longitude: 120.0)
+if let riseTime = try? sunCalc.time(ofDate: now, forSolarEvent: .sunrise, atLocation: location) {
+    let sunrise = formatter.string(from: riseTime)
+    print("Sunrise: \(sunrise)")
+}
+if let setTime = try? sunCalc.time(ofDate: now, forSolarEvent: .sunset, atLocation: location) {
+    let sunset = formatter.string(from: setTime)
+    print("Sunset: \(sunset)")
+}
 
 // Moon rise and moon set
 let moonTimes = try? sunCalc.moonTimes(date: now, location: location)
