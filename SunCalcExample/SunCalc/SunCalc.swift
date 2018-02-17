@@ -54,8 +54,8 @@ public class SunCalc {
     }
 
     public enum LunarEventError: Error {
-        case moonNeverRise
-        case moonNeverSet
+        case moonNeverRise(Date?)
+        case moonNeverSet(Date?)
     }
 
     private static let e = 23.4397 * Double.radPerDegree
@@ -260,10 +260,12 @@ public class SunCalc {
         }
         else {
             if ye > 0 {
-                throw LunarEventError.moonNeverSet
+                let rise = (riseHour == nil) ? nil : date.hoursLater(riseHour!)
+                throw LunarEventError.moonNeverSet(rise)
             }
             else {
-                throw LunarEventError.moonNeverRise
+                let set = (setHour == nil) ? nil : date.hoursLater(setHour!)
+                throw LunarEventError.moonNeverRise(set)
             }
         }
     }

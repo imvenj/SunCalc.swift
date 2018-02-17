@@ -10,8 +10,8 @@ Now `SunCalc` can handle polar region's "Mid-night sun". Errors are now embeded 
 SunCalc.SolarEventError.sunNeverRise
 SunCalc.SolarEventError.sunNeverSet
 
-SunCalc.LunarEventError.moonNeverRise
-SunCalc.LunarEventError.moonNeverSet
+SunCalc.LunarEventError.moonNeverRise(Date?) // An optional date for moonset time.
+SunCalc.LunarEventError.moonNeverSet(Date?) // An optional date for moonrise time.
 ```
 
 `Location` now become `SunCalc.Location`.
@@ -45,6 +45,10 @@ if let moonTimes = moonTimes {
     print("Moonset: \(formatter.string(from: moonTimes.moonSetTime))")
 }
 ```
+
+## Known Issue
+
+Moon rise and set time sometimes not correct. See [Issue #1](https://github.com/imvenj/SunCalc.swift/issues/1)
 
 ## LICENSE
 
